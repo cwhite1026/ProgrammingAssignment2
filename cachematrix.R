@@ -21,6 +21,7 @@
 ##     matrix; set(), which changes the matrix and resets the inverse;
 ##     get_inverse(), which returns the current value of the inverse;
 ##     and set_inverse(), which stores the inverse of the matrix.
+
 makeCacheMatrix <- function(x = matrix()) {
     
     # Make sure that there aren't any guys in the local environment
@@ -59,6 +60,9 @@ makeCacheMatrix <- function(x = matrix()) {
 ## ----------
 ## x : cacheMatrix
 ##     The cacheMatrix you want to interact with
+## ... : additional parameters
+##     Additional parameters will be passed as solve(x, ...).  They
+##     don't do anything if the inverse is already calculated.
 ##
 ## Returns
 ## -------
