@@ -23,7 +23,6 @@
 ##     and set_inverse(), which stores the inverse of the matrix.
 
 makeCacheMatrix <- function(x = matrix()) {
-    
     # Make sure that there aren't any guys in the local environment
     # with the name that we want for the inverse
     x_inv <- NULL
@@ -48,6 +47,7 @@ makeCacheMatrix <- function(x = matrix()) {
     #Function to return the stored value for the matrix's inverse
     get_inverse <- function() x_inv
     
+    #Return the list of functions
     list(set=set, get=get, set_inverse=set_inverse,
          get_inverse=get_inverse)
 }
@@ -68,6 +68,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## -------
 ## x_inv : matrix
 ##     The inverse of the matrix cached
+
 cacheSolve <- function(x, ...) {
     ## Grab the value that we currently have as the inverse
     current_x_inv <- x$get_inverse()
